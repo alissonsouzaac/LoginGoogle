@@ -17,4 +17,11 @@ export class AppController {
   googleAuthRedirect(@Req() req){
     return this.appService.googlelogin(req)
   }
+
+
+  @Get('discord')
+  @UseGuards(AuthGuard('discord'))
+  getUserFromDiscordLogin(@Req() req) {
+    return req.user;
+}
 }

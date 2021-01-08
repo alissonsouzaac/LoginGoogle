@@ -12,4 +12,15 @@ export class AppService {
       user: req.user,
     }
   }
+
+  async findUserFromDiscordId(discordId: string): Promise<any> {
+    if(!discordId){
+      return 'No user from google'
+    }
+
+    return {
+      message: 'User Info from Google',
+      user: discordId,
+    }
+  }
 }
